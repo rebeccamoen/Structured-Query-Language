@@ -39,7 +39,8 @@
  ORDER BY SalesPersonID, FY DESC, FQ DESC;
 
  -- Challenge Question 3: Vacation Hours
- SELECT SUBSTRING(E.NationalIDNumber, (LEN(E.NationalIDNumber)-3), 4) AS SSN, P.FirstName, P.LastName, E.JobTitle, E.VacationHours FROM HumanResources.Employee AS E
+ SELECT SUBSTRING(E.NationalIDNumber, (LEN(E.NationalIDNumber)-3), 4) AS SSN, P.FirstName, P.LastName, E.JobTitle, E.VacationHours
+ FROM HumanResources.Employee AS E
     JOIN Person.Person AS P ON E.BusinessEntityID = P.BusinessEntityID
  ORDER BY E.VacationHours DESC;
 
