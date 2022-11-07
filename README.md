@@ -1,5 +1,5 @@
 # Structured-Query-Language
-Transact-SQL Exercises and Demonstrations from the Microsoft course DP-080: Querying with Transact-SQL and associated Microsoft Learn training content
+Transact-SQL Exercises from the Microsoft course DP-080: Querying with Transact-SQL and associated Microsoft Learn training content
 
 #### Modules
 	1. Getting Started with Transact-SQL
