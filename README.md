@@ -24,3 +24,9 @@ Transact-SQL Exercises from the Microsoft course DP-080: Querying with Transact-
 	12. Create stored procedures in T-SQL
 	12. Implement error handling with T-SQL
 	13. Implement transactions with Transact SQL
+
+#### Challenge Questions
+	1. Median Revenue
+	2. Year over Year Comparisons
+	3. Vacation Hours
+	4. Special Team
