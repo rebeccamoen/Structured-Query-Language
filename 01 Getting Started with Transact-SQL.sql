@@ -4,7 +4,7 @@ SELECT ProductNumber, Color, Size, Color + ', ' + Size AS ProductDetails
 FROM SalesLT.Product;
 
 -- Work with data types
-SELECT CAST(ProductID AS varchar(5)) + ': ' + Name AS ProductName -- CAST function is an ANSI standard and can be used to remove or reduce format while still converting
+SELECT CAST(ProductID AS varchar(5)) + ': ' + Name AS ProductName -- CAST function is an ANSI standard and can be used to remove or reduce format
 SELECT CONVERT(varchar(5), ProductID) + ': ' + Name AS ProductName -- CONVERT is a SQL Server specific function
 FROM SalesLT.Product;
 
