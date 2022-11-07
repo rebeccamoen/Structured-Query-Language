@@ -4,10 +4,8 @@ SELECT ProductNumber, Color, Size, Color + ', ' + Size AS ProductDetails
 FROM SalesLT.Product;
 
 -- Work with data types
-SELECT CAST(ProductID AS varchar(5)) + ': ' + Name AS ProductName
--- CAST function is an ANSI standard and can be used to remove or reduce format while still converting
-SELECT CONVERT(varchar(5), ProductID) + ': ' + Name AS ProductName
--- CONVERT is a SQL Server specific function
+SELECT CAST(ProductID AS varchar(5)) + ': ' + Name AS ProductName -- CAST function is an ANSI standard and can be used to remove or reduce format while still converting
+SELECT CONVERT(varchar(5), ProductID) + ': ' + Name AS ProductName -- CONVERT is a SQL Server specific function
 FROM SalesLT.Product;
 
 SELECT SellStartDate, -- CONVERT can be used for formatting date and time values when converting to text-based data
@@ -15,21 +13,17 @@ SELECT SellStartDate, -- CONVERT can be used for formatting date and time values
     CONVERT(nvarchar(30), SellStartDate, 126) AS ISO8601FormatDate
 FROM SalesLT.Product;
 
-SELECT Name, TRY_CAST(Size AS Integer) AS NumericSize
--- TRY_CAST function for sizes that are not numeric (S, M, or L)
+SELECT Name, TRY_CAST(Size AS Integer) AS NumericSize -- TRY_CAST function for sizes that are not numeric (S, M, or L)
 FROM SalesLT.Product;
 
 -- Handle NULL values
-SELECT ProductNumber, ISNULL(Color, '') + ', ' + ISNULL(Size, '') AS ProductDetails
--- ISNULL replaces NULL values with a specified literal value
+SELECT ProductNumber, ISNULL(Color, '') + ', ' + ISNULL(Size, '') AS ProductDetails -- ISNULL replaces NULL values with a specified literal value
 FROM SalesLT.Product;
 
-SELECT Name, NULLIF(Color, 'Multi') AS SingleColor
--- NULLIF does the opposite and replaces the value with NULL instead
+SELECT Name, NULLIF(Color, 'Multi') AS SingleColor -- NULLIF does the opposite and replaces the value with NULL instead
 FROM SalesLT.Product;
 
-SELECT Name, COALESCE(SellEndDate, SellStartDate) AS StatusLastUpdated
--- COALESCE return the first non-NULL value
+SELECT Name, COALESCE(SellEndDate, SellStartDate) AS StatusLastUpdated -- COALESCE return the first non-NULL value
 FROM SalesLT.Product;
 
 SELECT Name,
@@ -49,6 +43,7 @@ SELECT Name,
         END AS ProductSize
 FROM SalesLT.Product;
 
+
 -- Challenge 1: Retrieve customer data
 SELECT *
 FROM SalesLT.Customer;
@@ -58,20 +53,20 @@ FROM SalesLT.Customer;
 SELECT SalesPerson, Title + ' ' + LastName AS CustomerName, Phone
 FROM SalesLT.Customer;
 
+
 -- Challenge 2: Retrieve customer order data
 SELECT *
 FROM SalesLT.SalesOrderHeader;
 
 -- Retrieve a list of customer companies:
 SELECT CAST(CustomerID AS varchar(5)) + ': ' + CompanyName AS Company
-FROM SalesLT.Customer;
--- Company: 78: Preferred Bikes
+FROM SalesLT.Customer; -- Company: 78: Preferred Bikes
 
 -- Retrieve a list of sales order revisions:
 SELECT SalesOrderNumber + ' (' + STR(RevisionNumber, 1) + ')' AS OrderRevision, -- OrderRevision: 5071774 (2)
-    CONVERT(nvarchar(30), OrderDate, 102) AS OrderDate
--- OrderDate: 2008.06.01
+    CONVERT(nvarchar(30), OrderDate, 102) AS OrderDate -- OrderDate: 2008.06.01
 FROM SalesLT.SalesOrderHeader;
+
 
 -- Challenge 3: Retrieve customer contact details
 SELECT *
